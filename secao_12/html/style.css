@@ -1,0 +1,21 @@
+.header{
+    text-align: center;
+    font-size: 2em;
+}
+
+.nav-principal{
+    display: block;
+    font-size: 1.5em;
+}
+.nav-ul{
+    list-style: none;
+}
+.nav-ul li{
+    margin-bottom: .5em;
+}
+
+.footer{
+    position: absolute;
+    font-weight: bold;
+    bottom: 0;
+}

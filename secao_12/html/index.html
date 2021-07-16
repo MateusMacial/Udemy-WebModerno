@@ -1,33 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Exercicios HTML</title>
 </head>
+
 <body>
-    <header>
-         <h1>Exercicios HTML</h1>
+    <header class="header">
+        <h1>Exercicios HTML</h1>
     </header>
-    <nav>
-        <a href wm-nav="exercicios/teste.html">00 - Teste HTML</a>
+    <nav class="nav-principal">
+        <ul class="nav-ul">
+            <li><a href="exercicios/texto1.html" target="_blanck">01 - Texto HTML</a></li>
+            <li><a href="exercicios/texto2.html" target="_blanck">02 - Texto 2 HTML</a></li>
+            <li><a href="exercicios/listas.html" target="_blanck">03 - Listas HTML</a></li>
+            <li><a href="exercicios/listasAninhadas.html" target="_blanck">04 - Listas Aninhadas HTML</a></li>
+            <li><a href="exercicios/links.html" target="_blanck">05 - Links HTML</a></li>
+            <li><a href="exercicios/tabelas.html" target="_blanck">06 - Tabelas HTML</a></li>
+            <li><a href="exercicios/form/form.html" target="_blanck">07 - Formularios HTML</a></li>
+            <li><a href="exercicios/imagens.html" target="_blanck">08 - Imagens HTML</a></li>
+            <li><a href="exercicios/video.html" target="_blanck">09 - Video HTML</a></li>
+            <li><a href="exercicios/tagsNaoVisuais.html" target="_blanck">10 - Tags nao visuais HTML</a></li>
+        </ul>
     </nav>
-    <section id="conteudo"></section>
-    <footer>
+    <footer class="footer">
         <p>Curso de web moderno.</p>
     </footer>
-    <script>
-        document.querySelectorAll('[wm-nav]').forEach(link => {
-            const conteudo = document.getElementById('conteudo')
-
-            link.onclick = function(e) {
-                e.preventDefault()
-                fetch(link.getAttribute('wm-nav'))
-                    .then(resp => resp.text())
-                    .then(html => conteudo.innerHTML = html)
-            }
-        })
-    </script>
 </body>
+
 </html>
