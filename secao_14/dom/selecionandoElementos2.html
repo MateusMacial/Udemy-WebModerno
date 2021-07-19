@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>      
+        /*Selecionando um elemento, no caso os que tem o id primeiro, e colocando a classe destaque*/        
+        document.querySelector('#primeiro').classList.add('destaque');
+
+        /*
+        Criando uma const 'selecionar' que vai receber uma funcao, essa funcao por sua vez seleciona todos
+        os seletores passados como parametro, e aplica um forEach para adicinar a classe destaque para cada
+        um deles
+        */
+        const selecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'));
+        /*Mesma que a de cima porem para remover a classe destaque*/
+        const descelecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'));
+
+        selecionar('div');
+        descelecionar('*');
+
+        selecionar('.terceiro.ultimo');
+        descelecionar('*');
+
+        /*O ':not' é uma negacao, no caso coloco para selecionar todos menos o que tem o id 'primeiro'*/
+        selecionar(':not(#primeiro)');
+        descelecionar('*');
+
+        /*Selecionando o primeiro filho de cada elemento*/
+        selecionar(':nth-child(1)');
+        descelecionar('*');
+
+        /*Seleciona o primeiro do tipo que foi passado*/
+        selecionar('div:nth-of-type(1)');
+        descelecionar('*');
+
+        /*Selecionando a partir de um atributo*/
+        selecionar('[wb-attrib]');
+
+    </script>
+</body>
+</html>

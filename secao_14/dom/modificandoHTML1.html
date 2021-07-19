@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <script>
+        /*Criando uma const para referenciar o body*/
+        const body = document.querySelector('body');
+
+        /*Criando um elemento no caso div e atribuindo isso a uma const*/
+        const div1 = document.createElement('div');
+        div1.classList.add('destaque');
+        div1.innerHTML = 'Primeiro';
+
+        const div2 = document.createElement('div');
+        /*Colocando um atributo, e esse atributo tem um valor*/
+        div2.setAttribute('wm-atributo', 'valor');
+        div2.innerHTML = 'Segundo';
+
+        const p = document.createElement('p');
+        p.innerHTML = 'Terceiro';
+
+        const div3 = document.createElement('div');
+        div3.appendChild(p);
+
+        /*Adiciona os elementos no fim do elemento pai*/
+        body.appendChild(div1);
+        body.appendChild(div2);
+        body.appendChild(div3);
+
+        /*Colocando texto em uma const, assim como o innerHTML*/
+        const text = document.createTextNode('Antes...');
+        /*Adiciona os elementos de forma mais cirurgica, no caso na div 3 no inicio dela*/
+        div3.insertBefore(text, div3.childNodes[0]);
+
+        /*Clonando um elemento, o no parametro se passa trua para clonar tbm seu filhos*/
+        const div4 = div3.cloneNode(true);
+        body.appendChild(div4);
+        body.removeChild(div3);
+        
+    </script>
+</body>
+
+</html>

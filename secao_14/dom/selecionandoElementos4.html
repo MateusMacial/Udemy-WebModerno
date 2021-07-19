@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <script>
+        function log(){
+            console.log(this)
+        }
+
+        HTMLCollection.prototype.log = log;
+        HTMLElement.prototype.log = log;
+        NodeList.prototype.log = log;
+        Node.prototype.log = log;
+
+        const lista = document.querySelector('div ul');
+
+        /*Selecionando o pai da lista(ul)*/
+        lista.parentNode.log();
+        /*Selecionando os filhor da lista(ul)*/
+        lista.childNodes.log();
+
+        const primeiro = lista.firstChild;
+        /*No caso esta contando o espaço entre as li(s)*/
+        primeiro.log();
+
+        /*Selecionando o prosimo parente de primeiro*/
+        primeiro.nextSibling.log();
+
+        const ultimo = lista.lastChild;
+        ultimo.log();
+        ultimo.previousSibling.log();
+
+        /*Nesse caso pega os filhos, nao pega os espaços em branco*/
+        lista.children.log();
+        /*Nesse cado pega o primeiro elemento*/
+        lista.firstElementChild.log();
+        lista.lastElementChild.log();
+        lista.parentNode.previousElementSibling.log();
+        lista.parentNode.nextElementSibling.log();
+
+        document.querySelectorAll('div ul li').log();
+
+    </script>
+</body>
+
+</html>
